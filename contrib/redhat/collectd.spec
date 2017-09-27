@@ -16,7 +16,7 @@
 #
 # - fetch the desired collectd release file from https://collectd.org/files/
 #   and save it in your ~/rpmbuild/SOURCES/ directory (or build your own out of
-#   the git repository: ./build.sh && ./configure && make-dist-bz2)
+#   the git repository: ./build.sh && ./configure && make dist-bzip2)
 #
 # - copy this file in your ~/rpmbuild/SPECS/ directory. Make sure the
 #   "Version:" tag matches the version from the tarball.
@@ -246,7 +246,7 @@
 
 Summary:	Statistics collection and monitoring daemon
 Name:		collectd
-Version:	5.7.1
+Version:	5.7.2
 Release:	7%{?dist}
 URL:		https://collectd.org
 Source:		https://collectd.org/files/%{name}-%{version}.tar.bz2
