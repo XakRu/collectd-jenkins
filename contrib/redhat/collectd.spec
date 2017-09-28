@@ -2299,7 +2299,6 @@ fi
 %if %{with_swap}
 %{_libdir}/%{name}/swap.so
 %endif
-%endif
 %if %{with_synproxy}
 %{_libdir}/%{name}/synproxy.so
 %endif
