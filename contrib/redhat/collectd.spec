@@ -2304,6 +2304,7 @@ fi
 %endif
 %if %{with_syslog}
 %{_libdir}/%{name}/syslog.so
+%endif
 %if %{with_table}
 %{_libdir}/%{name}/table.so
 %endif
