@@ -1993,7 +1993,7 @@ Collectd utilities
 	%{?_with_snmp_agent} \
 	%{?_with_statsd} \
 	%{?_with_swap} \
-    %{?_with_synproxy \
+    %{?_with_synproxy} \
 	%{?_with_syslog} \
 	%{?_with_table} \
 	%{?_with_tail_csv} \
