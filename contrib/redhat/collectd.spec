@@ -2366,6 +2366,9 @@ fi
 %{_includedir}/collectd/network.h
 %{_includedir}/collectd/network_buffer.h
 %{_includedir}/collectd/lcc_features.h
+%{_includedir}/collectd/network_parse.h
+%{_includedir}/collectd/server.h
+%{_includedir}/collectd/types.h
 %{_libdir}/pkgconfig/libcollectdclient.pc
 %{_libdir}/libcollectdclient.so
 
@@ -2723,6 +2726,11 @@ fi
 %doc contrib/
 
 %changelog
+* Thu Sep 28 2017 Default <calvinxakru@gmail.com> - 5.7.2-526
+- Add new libcollectdclient/network_parse
+- Add new libcollectdclient/server
+- Add new libcollectdclient/types
+
 * Fri Aug 18 2017 Ruben Kerkhof <ruben@rubenkerkhof.com> - 5.7.1-7
 - Add new intel_pmu plugin
 
