@@ -130,6 +130,7 @@
 %define with_snmp_agent 0%{!?_without_snmp_agent:1}
 %define with_statsd 0%{!?_without_statsd:1}
 %define with_swap 0%{!?_without_swap:1}
+%define with_synproxy 0%{!?_without_synproxy:1}
 %define with_syslog 0%{!?_without_syslog:1}
 %define with_table 0%{!?_without_table:1}
 %define with_tail 0%{!?_without_tail:1}
@@ -1655,6 +1656,12 @@ Collectd utilities
 %define _with_swap --disable-swap
 %endif
 
+%if %{with_synproxy}
+%define _with_synproxy --enable-synproxy
+%else
+%define _with_synproxy --disable-synproxy
+%endif
+
 %if %{with_syslog}
 %define _with_syslog --enable-syslog
 %else
@@ -1986,6 +1993,7 @@ Collectd utilities
 	%{?_with_snmp_agent} \
 	%{?_with_statsd} \
 	%{?_with_swap} \
+    %{?_with_synproxy \
 	%{?_with_syslog} \
 	%{?_with_table} \
 	%{?_with_tail_csv} \
@@ -2291,9 +2299,12 @@ fi
 %if %{with_swap}
 %{_libdir}/%{name}/swap.so
 %endif
+%endif
+%if %{with_synproxy}
+%{_libdir}/%{name}/synproxy.so
+%endif
 %if %{with_syslog}
 %{_libdir}/%{name}/syslog.so
-%endif
 %if %{with_table}
 %{_libdir}/%{name}/table.so
 %endif
@@ -2726,6 +2737,9 @@ fi
 %doc contrib/
 
 %changelog
+* Thu Sep 28 2017 xakru <calvinxakru@gmail.com> - 5.7.2-526
+- Add new synproxy plugin
+
 * Thu Sep 28 2017 Default <calvinxakru@gmail.com> - 5.7.2-526
 - Add new libcollectdclient/network_parse
 - Add new libcollectdclient/server
