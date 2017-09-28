@@ -10,4 +10,5 @@ if test -z "$VERSION"; then
 	VERSION="$DEFAULT_VERSION"
 fi
 
+sed -i "s/^Version.*/Version: ${VERSION}/g" contrib/redhat/collectd.spec
 printf "%s" "$VERSION"
